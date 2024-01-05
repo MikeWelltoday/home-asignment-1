@@ -16,6 +16,7 @@ export const UserList2 = (props: UserList2PropsType) => {
             <ul>
                 {props.users.myFriends.map((user) =>
                     (
+                        // пришлось вынести li сюда из компоненты, так как реакт ругался на отсутствие уникального key
                         <li key={user.id}>
                             <CurrentUser user={user}/>
                         </li>
