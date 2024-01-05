@@ -14,14 +14,7 @@ export const UserList2 = (props: UserList2PropsType) => {
             <button id={'hw02-filter-button'} onClick={() => props.filterUsers()}>SHOW ME FRIENDS FROM LA</button>
 
             <ul>
-                {props.users.myFriends.map((user) =>
-                    (
-                        // пришлось вынести li сюда из компоненты, так как реакт ругался на отсутствие уникального key
-                        <li key={user.id}>
-                            <CurrentUser user={user}/>
-                        </li>
-                    )
-                )}
+                {props.users.myFriends.map((user) => <CurrentUser user={user} key={user.id}/>)}
             </ul>
         </div>
     )
